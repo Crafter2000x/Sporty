@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sporty.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,5 +15,38 @@ namespace Sporty
         {
             InitializeComponent();
         }
+
+        private void Button_Navigation(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            switch (button.ClassId) 
+            {
+                case "Overzichten":
+                    Navigation.PushAsync(new OverzichtenPage());
+                    return;
+
+                case "Workouts":
+                    Navigation.PushAsync(new WorkoutsPage());
+                    return;
+
+                case "BMI":
+                    Navigation.PushAsync(new BMIPage());
+                    return;
+
+                case "Routes":
+                    Navigation.PushAsync(new RoutesPage());
+                    return;
+
+                case "Data":
+                    Navigation.PushAsync(new DataOverPage());
+                    return;
+
+                case "Opties":
+                    Navigation.PushAsync(new OptiesPage());
+                    return;
+            }
+        }
+
     }
 }

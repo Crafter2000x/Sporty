@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Sporty.MainPage">
+             x:Class="Sporty.MainPage"
+             NavigationPage.HasNavigationBar="false">
+
     <Grid>
         
         <Grid.RowDefinitions>
@@ -18,12 +20,12 @@
         
         <Image Source="SportyLogo.png" BackgroundColor="WhiteSmoke" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-        <Button Text="Overzichten" ContentLayout="Top,0" ImageSource="poll.png" Grid.Column="0" Grid.Row="1" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
-        <Button Text="BMIT" ContentLayout="Top,0" ImageSource="user.png" Grid.Column="0" Grid.Row="2" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" />
-        <Button Text="Data overdracht" ContentLayout="Top,0" ImageSource="computing_cloud.png" Grid.Column="0" Grid.Row="3" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
-        <Button Text="Workouts" ContentLayout="Top,0" ImageSource="run.png" Grid.Column="1" Grid.Row="1" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
-        <Button Text="Routes" ContentLayout="Top,0" ImageSource="map_symbol.png" Grid.Column="1" Grid.Row="2" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
-        <Button Text="Opties" ContentLayout="Top,0" ImageSource="settings.png" Grid.Column="1" Grid.Row="3" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
+        <Button Text="Overzichten" ContentLayout="Top,0" ImageSource="poll.png" Grid.Column="0" Grid.Row="1" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" Clicked="Button_Navigation" ClassId="Overzichten"/>
+        <Button Text="BMIT" ContentLayout="Top,0" ImageSource="user.png" Grid.Column="0" Grid.Row="2" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" Clicked="Button_Navigation" ClassId="BMI"/>
+        <Button Text="Data overdracht" ContentLayout="Top,0" ImageSource="computing_cloud.png" Grid.Column="0" Grid.Row="3" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" Clicked="Button_Navigation" ClassId="Data"/>
+        <Button Text="Workouts" ContentLayout="Top,0" ImageSource="run.png" Grid.Column="1" Grid.Row="1" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" Clicked="Button_Navigation" ClassId="Workouts"/>
+        <Button Text="Routes" ContentLayout="Top,0" ImageSource="map_symbol.png" Grid.Column="1" Grid.Row="2" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" Clicked="Button_Navigation" ClassId="Routes"/>
+        <Button Text="Opties" ContentLayout="Top,0" ImageSource="settings.png" Grid.Column="1" Grid.Row="3" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" Clicked="Button_Navigation" ClassId="Opties"/>
     </Grid>
 
 </ContentPage>
