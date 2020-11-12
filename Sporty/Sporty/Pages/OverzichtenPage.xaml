@@ -3,11 +3,68 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sporty.OverzichtenPage"
              NavigationPage.HasNavigationBar="false">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <Grid Padding="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="WhiteSmoke" BorderColor="#dcbf9d" HasShadow="True" Margin="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+               
+                <Image Source="poll.png" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Overzichten" FontSize="42" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+            </Grid>
+        </Frame>
+
+        <Frame Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" BackgroundColor="WhiteSmoke" BorderColor="#dcbf9d" HasShadow="True" Margin="0">
+            <StackLayout>
+                <Image Source="simple_full.png"/>
+                <Label Text="Data 1"/>
+                <Label Text="Data 2"/>
+                <Label Text="Data 3"/>
+                <Label Text="Data 4"/>
+                <Label Text="Data 5"/>
+                <Label Text="Data 6"/>
+                <Label Text="Data 7"/>
+                <Label Text="Data 8"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="-5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="B" Grid.Row="0" Grid.Column="0" BackgroundColor="Red"/>
+                <Button Text="K" Grid.Row="0" Grid.Column="2" BackgroundColor="Yellow"/>
+                <Button Text="DAG" Grid.Row="0" Grid.Column="1" BackgroundColor="Yellow"/>
+            </Grid>
+        </Frame>
+    </Grid>
+    
+
 </ContentPage>

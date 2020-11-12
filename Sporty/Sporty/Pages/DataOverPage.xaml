@@ -3,11 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sporty.Pages.DataOverPage"
              NavigationPage.HasNavigationBar="false">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid Padding="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="WhiteSmoke" BorderColor="#dcbf9d" HasShadow="True" Margin="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="computing_cloud.png" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Data punt" FontSize="42" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+            </Grid>
+        </Frame>
+
+        <Frame Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" BackgroundColor="WhiteSmoke" BorderColor="#dcbf9d" HasShadow="True" Margin="0">
+            <ImageButton BackgroundColor="WhiteSmoke" Source="power_button_off.png" Clicked="EnableDataTransport"/>
+
+        </Frame>
+
+        <Frame Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="-5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="B" Grid.Row="0" Grid.Column="0" BackgroundColor="Red"/>
+                <Button Grid.Row="0" Grid.Column="2" BackgroundColor="WhiteSmoke"/>
+                <Button Grid.Row="0" Grid.Column="1" BackgroundColor="WhiteSmoke"/>
+            </Grid>
+        </Frame>
+    </Grid>
 </ContentPage>
