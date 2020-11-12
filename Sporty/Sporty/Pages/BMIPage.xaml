@@ -3,11 +3,131 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sporty.BMIPage"
              NavigationPage.HasNavigationBar="false">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid RowSpacing="0"
+          ColumnSpacing="0"
+          >
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height=".6*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".20*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".20*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Gewicht (kg)"
+               FontSize="20"
+               Grid.Row="1"
+               Grid.Column="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+        <Editor Keyboard="Numeric"
+                Placeholder="gewicht (kg)"
+                Grid.Row="2"
+               Grid.Column="1"
+               HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                x:Name="editgewicht"/>
+
+        <Label Text="Lengte (cm)" 
+               FontSize="20"
+               Grid.Row="3"
+               Grid.Column="1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+        <Editor
+            Placeholder="lengte (cm)"
+            Keyboard="Numeric"
+                Grid.Row="4"
+               Grid.Column="1"
+               HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                x:Name="editlengte"/>
+
+        <Frame HasShadow="True"
+               BorderColor="#dcbf9d" 
+               Grid.Row="5"
+               Grid.Column="1"
+               Margin="0,0,0,10">
+
+            <Grid RowSpacing="0"
+                  ColumnSpacing="0"
+                  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Jouw BMI komt hier te staan." 
+                        FontSize="20"
+                            Grid.Row="0"
+               
+                        
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        x:Name="txtBMI"/>
+
+                <Label Text="Bij een BMI:
+               
+               
+               
+               lager dan 18,5: Ondergewicht.
+               
+               
+               18,5-24,9: Gezond gewicht.
+               
+               
+               25-29,9: Overgewicht. " 
+               Grid.Row="1"
+               
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+            </Grid>
+        </Frame>
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="B"
+            HorizontalOptions="Center"
+            VerticalOptions="FillAndExpand"
+            CornerRadius="7"
+            BorderColor="#dcbf9d" 
+            BorderWidth="5" 
+            BackgroundColor="WhiteSmoke"
+            />
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="1"
+            Text="Bereken BMI"
+            Clicked="Button_Clicked"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            CornerRadius="7" 
+            BorderColor="#dcbf9d" 
+            BorderWidth="5" 
+            BackgroundColor="WhiteSmoke"
+            />
+        <Button
+            Grid.Row="6"
+            Grid.Column="2"
+            Text="O"
+            HorizontalOptions="Center"
+            VerticalOptions="FillAndExpand"
+            CornerRadius="7" 
+            BorderColor="#dcbf9d" 
+            BorderWidth="5" 
+            BackgroundColor="WhiteSmoke"
+            />
+
+    </Grid>
 </ContentPage>
