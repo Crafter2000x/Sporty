@@ -21,12 +21,12 @@
             <ColumnDefinition Width=".20*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Text="Gewicht (kg)"
-               FontSize="20"
+        <Image Source="gewicht.png" x:Name="gewicht1"
                Grid.Row="1"
                Grid.Column="1"
+               IsVisible="true"
                HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+               VerticalOptions="Center" />
 
         <Editor Keyboard="Numeric"
                 Placeholder="gewicht (kg)"
@@ -36,12 +36,11 @@
                 VerticalOptions="Center"
                 x:Name="editgewicht"/>
 
-        <Label Text="Lengte (cm)" 
-               FontSize="20"
+        <Image Source="lengte.png" x:Name="lengte"
                Grid.Row="3"
                Grid.Column="1"
                HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+               VerticalOptions="Center" />
 
         <Editor
             Placeholder="lengte (cm)"
@@ -66,11 +65,9 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Label Text="Jouw BMI komt hier te staan." 
+                <Label Text="Jouw BMI-waarde:" 
                         FontSize="20"
                             Grid.Row="0"
-               
-                        
                         HorizontalOptions="Center"
                         VerticalOptions="Start"
                         x:Name="txtBMI"/>
