@@ -26,7 +26,25 @@ namespace Sporty
 
                 double uitkomst = Gewicht / lengtekwadraat;
 
-
+                if (uitkomst < 18.5){
+                    if (uitkomst == 0)
+                    {
+                        txtBMI.TextColor = Color.Black;
+                    }
+                    else
+                    {
+                        txtBMI.TextColor = Color.Orange;
+                    }
+                    
+                } else if(uitkomst>=18.5 && uitkomst < 24.5)
+                {
+                    txtBMI.TextColor=Color.LimeGreen;
+                }
+                else if(uitkomst>=24.5)
+                {
+                    txtBMI.TextColor = Color.Red;
+                }
+                uitkomst = Math.Round(uitkomst, 1);
                 txtBMI.Text = "Jouw BMI-waarde: " + uitkomst.ToString();
             }
             catch
