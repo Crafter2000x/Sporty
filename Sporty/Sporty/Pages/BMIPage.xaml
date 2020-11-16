@@ -8,9 +8,8 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height=".7*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -40,35 +39,35 @@
                Grid.Row="1"
                Grid.Column="1"
                IsVisible="true"
-               HorizontalOptions="Center"
+               HorizontalOptions="Start"
                VerticalOptions="Center" />
 
         <Editor Keyboard="Numeric"
                 Placeholder="gewicht (kg)"
-                Grid.Row="2"
+                Grid.Row="1"
                Grid.Column="1"
-               HorizontalOptions="FillAndExpand"
+               HorizontalOptions="EndAndExpand"
                 VerticalOptions="Center"
                 x:Name="editgewicht"/>
 
         <Image Source="lengte.png" x:Name="lengte"
-               Grid.Row="3"
+               Grid.Row="2"
                Grid.Column="1"
-               HorizontalOptions="Center"
+               HorizontalOptions="Start"
                VerticalOptions="Center" />
 
         <Editor
             Placeholder="lengte (cm)"
             Keyboard="Numeric"
-                Grid.Row="4"
+                Grid.Row="2"
                Grid.Column="1"
-               HorizontalOptions="FillAndExpand"
+               HorizontalOptions="EndAndExpand"
                 VerticalOptions="Center"
                 x:Name="editlengte"/>
 
         <Frame HasShadow="True"
                BorderColor="#dcbf9d" 
-               Grid.Row="5"
+               Grid.Row="4"
                Grid.Column="1"
                Margin="0,0,0,10">
 
@@ -84,7 +83,7 @@
                         FontSize="20"
                             Grid.Row="0"
                         HorizontalOptions="Center"
-                        VerticalOptions="Start"
+                        VerticalOptions="Center"
                         x:Name="txtBMI"/>
 
                 <Label Text="Bij een BMI:
@@ -101,12 +100,12 @@
                Grid.Row="1"
                
                HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+               VerticalOptions="Start"/>
             </Grid>
         </Frame>
 
         <Button
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.Column="0"
             Text="B"
             HorizontalOptions="Center"
@@ -118,7 +117,7 @@
             />
 
         <Button
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.Column="1"
             Text="Bereken BMI"
             Clicked="Button_Clicked"
@@ -130,7 +129,7 @@
             BackgroundColor="WhiteSmoke"
             />
         <Button
-            Grid.Row="6"
+            Grid.Row="5"
             Grid.Column="2"
             Text="O"
             HorizontalOptions="Center"
