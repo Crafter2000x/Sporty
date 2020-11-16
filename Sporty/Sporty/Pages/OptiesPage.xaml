@@ -3,11 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sporty.Pages.OptiesPage"
              NavigationPage.HasNavigationBar="false">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    
+    <Grid Padding="5"
+          BackgroundColor="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".9*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".16*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".16*"/>
+        </Grid.ColumnDefinitions>
+        <Frame Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="WhiteSmoke" BorderColor="#dcbf9d" HasShadow="True" Margin="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="settings.png" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Opties" FontSize="42" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+            </Grid>
+        </Frame>
+        <ScrollView Grid.Row="1" Grid.Column="1">
+            <Label  FontSize="20" Text="In deze app kan je zelf bepalen of je fietst, loopt of rent. Vervolgens berekent de app hoeveel calorieën je hebt verbrand en dat wordt opgeslagen. Ook kan de gebruiker zijn eigen BMI berekenen. De app beveelt ook routes aan om te fietsen of te lopen in Eindhoven en de streek. De verbrandde calorieën die de gebruiker heeft gemaakt kan teruggevonden worden in de week-, maand- en jaaroverzicht.  ">
+            
+        </Label>
+            </ScrollView>
+        <Label FontSize="20" Grid.Row="3" Grid.Column="1" Text="Heb je vragen of opmerkingen? Laat het ons weten! Stuur een mail naar sportyteam@fakemail.nl"></Label>
+        <Button
+            Grid.Row="4"
+            Grid.ColumnSpan="3"
+            Text="Terug naar Hoofdpagina"
+            BorderColor="#dcbf9d"
+            BorderWidth="5"
+            BackgroundColor="WhiteSmoke"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="End"/>
+
+        
+
+    </Grid>
 </ContentPage>
