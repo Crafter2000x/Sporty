@@ -472,5 +472,14 @@ namespace Sporty.Pages
             fietsroute5.BackgroundColor = Color.Beige;
         }
 
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
+        }
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new OptiesPage());
+        }
     }
 }

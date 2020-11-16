@@ -59,8 +59,8 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Text="B" Grid.Row="0" Grid.Column="0" BackgroundColor="Red"/>
-                <Button Text="K" Grid.Row="0" Grid.Column="2" BackgroundColor="Yellow"/>
+                <Button Text="B" Grid.Row="0" Clicked="Button_Clicked" Grid.Column="0" BackgroundColor="Red"/>
+                <Button Text="O" Clicked="Button_Clicked_1" Grid.Row="0" Grid.Column="2" BackgroundColor="Yellow"/>
                 <Button Text="DAG" Grid.Row="0" Grid.Column="1" BackgroundColor="Yellow"/>
             </Grid>
         </Frame>

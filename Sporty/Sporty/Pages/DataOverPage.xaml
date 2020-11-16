@@ -49,7 +49,7 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Text="B" Grid.Row="0" Grid.Column="0" BackgroundColor="Red"/>
+                <Button Text="B" Clicked="Button_Clicked" Grid.Row="0" Grid.Column="0" BackgroundColor="Red"/>
                 <Button Grid.Row="0" Grid.Column="2" BackgroundColor="WhiteSmoke"/>
                 <Button Grid.Row="0" Grid.Column="1" BackgroundColor="WhiteSmoke"/>
             </Grid>

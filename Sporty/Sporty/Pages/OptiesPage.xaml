@@ -46,6 +46,7 @@
             Text="Terug naar Hoofdpagina"
             BorderColor="#dcbf9d"
             BorderWidth="5"
+            Clicked="Button_Clicked"
             BackgroundColor="WhiteSmoke"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="End"/>

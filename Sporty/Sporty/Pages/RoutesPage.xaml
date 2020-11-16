@@ -189,6 +189,7 @@
             Grid.Row="4"
             Grid.Column="0"
             Text="B"
+            Clicked="Button_Clicked_1"
             BorderColor="#dcbf9d"
             BorderWidth="5"
             BackgroundColor="WhiteSmoke"
@@ -213,6 +214,7 @@
             BorderWidth="5"
             BackgroundColor="WhiteSmoke"
             Text="O"
+            Clicked="Button_Clicked_2"
             HorizontalOptions="Center"
             VerticalOptions="End"
             />
