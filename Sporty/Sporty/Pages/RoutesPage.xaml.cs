@@ -205,7 +205,7 @@ namespace Sporty.Pages
 
                 mapslocal.MapElements.Add(polyline);
 
-                button1LoopWasClicked = false;
+               
             }
 
             if (button1FietsWasClicked)
@@ -306,7 +306,7 @@ namespace Sporty.Pages
                         }
                 };
                 mapslocal.MapElements.Add(polyline);
-                button1FietsWasClicked = false;
+                
             }
 
         }
