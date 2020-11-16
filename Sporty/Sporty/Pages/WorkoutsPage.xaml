@@ -117,8 +117,8 @@
             </Grid>
         </ScrollView>
         <Button Text="Bereken" x:Name="btnBereken" Grid.Column="1" Grid.Row="7" VerticalOptions="End" Clicked="btnBereken_Clicked" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
-        <Button Text="B" x:Name="btnTerug" Grid.Column="0" Grid.Row="7" VerticalOptions="End" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" FontSize="20"/>
-        <Button Text="O" x:Name="btnOpties" Grid.Column="2" Grid.Row="7" VerticalOptions="End" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" FontSize="20"/>
+        <Button Text="B" Clicked="btnTerug_Clicked" x:Name="btnTerug" Grid.Column="0" Grid.Row="7" VerticalOptions="End" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" FontSize="20"/>
+        <Button Text="O" x:Name="btnOpties" Clicked="btnOpties_Clicked" Grid.Column="2" Grid.Row="7" VerticalOptions="End" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" FontSize="20"/>
     </Grid>
 </ContentPage>
 

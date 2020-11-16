@@ -164,5 +164,15 @@ namespace Sporty
             btnRennen.BackgroundColor = Color.WhiteSmoke;
             btnLopen.BackgroundColor = Color.WhiteSmoke;
         }
+
+        private void btnTerug_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
+        }
+
+        private void btnOpties_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Pages.OptiesPage());
+        }
     }
 }
