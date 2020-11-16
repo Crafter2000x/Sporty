@@ -6,7 +6,7 @@
 
     <Grid Padding="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height=".7*"/>
         </Grid.RowDefinitions>
@@ -29,7 +29,7 @@
                 </Grid.ColumnDefinitions>
                
                 <Image Source="poll.png" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0"/>
-                <Label Text="Overzichten" FontSize="42" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Overzichten" FontSize="42" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
             </Grid>
         </Frame>
 

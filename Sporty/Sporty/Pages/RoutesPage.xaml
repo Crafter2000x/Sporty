@@ -2,12 +2,220 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sporty.Pages.RoutesPage"
+             xmlns:routes="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              NavigationPage.HasNavigationBar="false">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid Padding="5"
+          BackgroundColor="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".9*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".16*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".16*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="WhiteSmoke" BorderColor="#dcbf9d" HasShadow="True" Margin="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="map_symbol.png" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Routes" FontSize="42" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
+            </Grid>
+        </Frame>
+
+        <Frame BorderColor="#dcbf9d"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               Grid.Row="1"
+               Grid.Column="1">
+            <routes:Map IsShowingUser="True"
+                    x:Name="mapslocal" 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand" />
+
+        </Frame>
+        <Label Text="kies loop- of fietsroutes"
+               HorizontalOptions="Center"
+               Grid.Row="2"
+               Grid.Column="1"/>
+        <Image Source="fiets.png"
+               WidthRequest="107"
+               HeightRequest="107"
+               Margin="0,0,0,-20"
+               x:Name="fietsplaatje"
+               IsVisible="true"
+               Grid.Column="1"
+                Grid.Row="2"
+                HorizontalOptions="Start"></Image>
+        <Image Source="voetganger.png"
+               WidthRequest="90"
+               HeightRequest="90"
+               Margin="0,0,0,-20"
+               x:Name="voetgangerplaatje"
+               IsVisible="false"
+               Grid.Column="1"
+                Grid.Row="2"
+                HorizontalOptions="Start"></Image>
+        <Switch Toggled="OnToggled"
+            Grid.Column="1"
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                x:Name="switchy"/>
+        <Image Source="fiets.png"
+               WidthRequest="107"
+               HeightRequest="107"
+               Margin="0,0,0,-20"
+               x:Name="fietsplaatje2"
+               IsVisible="true"
+               Grid.Column="1"
+                Grid.Row="2"
+                HorizontalOptions="End"></Image>
+        <Image Source="voetganger.png"
+               WidthRequest="90"
+               HeightRequest="90"
+               x:Name="voetgangerplaatje2"
+               IsVisible="false"
+               Margin="0,0,0,-20"
+               Grid.Column="1"
+                Grid.Row="2"
+                HorizontalOptions="End"></Image>
+        <ScrollView
+           Grid.Row="3" Grid.Column="1" x:Name="loop" IsVisible="false">
+            <StackLayout>
+                <Button 
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                    Clicked="route1_Clicked"
+                    x:Name="route1"
+                    Text="looproute 1">
+                </Button>
+                <Button 
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                    Clicked="route2_Clicked"
+                    x:Name="route2"
+                    Text="Hier staat nog geen route">
+                </Button>
+                <Button 
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                    Clicked="route3_Clicked"
+                    x:Name="route3"
+                    Text="Hier staat nog geen route">
+                </Button>
+                <Button 
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                    Clicked="route4_Clicked"
+                    x:Name="route4"
+                    Text="Hier staat nog geen route">
+                </Button>
+                <Button 
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                    Clicked="route5_Clicked"
+                    x:Name="route5"
+                    Text="Hier staat nog geen route">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+        <ScrollView Grid.Row="3" Grid.Column="1" x:Name="fiets" IsVisible="true">
+            <StackLayout>
+                <Button 
+                        BorderColor="#dcbf9d"
+                        BorderWidth="5"
+                        BackgroundColor="WhiteSmoke"
+                        Clicked="fietsroute1_Clicked"
+                        Text="fietsroute 1"
+                        x:Name="fietsroute1">
+                </Button>
+                <Button 
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                    Clicked="fietsroute2_Clicked"
+                        Text="Hier staat nog geen route"
+                        x:Name="fietsroute2">
+                </Button>
+                <Button 
+                    Clicked="fietsroute3_Clicked"
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                        Text="Hier staat nog geen route"
+                        x:Name="fietsroute3">
+                </Button>
+                <Button 
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                    Clicked="fietsroute4_Clicked"
+                        Text="Hier staat nog geen route"
+                        x:Name="fietsroute4">
+                </Button>
+                <Button 
+                    BorderColor="#dcbf9d"
+                    BorderWidth="5"
+                    BackgroundColor="WhiteSmoke"
+                    Clicked="fietsroute5_Clicked"
+                        Text="Hier staat nog geen route"
+                        x:Name="fietsroute5">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="B"
+            BorderColor="#dcbf9d"
+            BorderWidth="5"
+            BackgroundColor="WhiteSmoke"
+            HorizontalOptions="Center"
+            VerticalOptions="End"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="Start"
+            BorderColor="#dcbf9d"
+            BorderWidth="5"
+            BackgroundColor="WhiteSmoke"
+            Clicked="Button_Clicked"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="End"
+            />
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            BorderColor="#dcbf9d"
+            BorderWidth="5"
+            BackgroundColor="WhiteSmoke"
+            Text="O"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            />
+
+    </Grid>
 </ContentPage>
