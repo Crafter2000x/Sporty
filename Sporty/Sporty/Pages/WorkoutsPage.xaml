@@ -2,12 +2,123 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sporty.WorkoutsPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              NavigationPage.HasNavigationBar="false">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".65*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".15*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".15*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <maps:Map 
+            IsShowingUser="true" 
+            HasZoomEnabled="True" 
+            MapType="Street" 
+            x:Name="map" 
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="3"
+            TrafficEnabled="true"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand" 
+            />
+
+
+        <Label 
+                x:Name="lblStopwatch" 
+                FontSize="35" 
+                Margin="0,-55,0,0"
+                Grid.Row="3"
+                Grid.Column="1" 
+                HorizontalOptions="Center"
+                VerticalOptions="Center" 
+                Text="00:00:00" />
+
+        <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                x:Name="btnStarten" 
+	            Clicked="btnStarten_Clicked" 
+                Text="Starten"
+                BorderWidth="5"
+                BorderColor="#dcbf9d"
+                BackgroundColor="WhiteSmoke"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+
+        <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                x:Name="btnPauzeren" 
+                Text="Pauzeren"
+                Clicked="btnPauzeren_Clicked" 
+                BorderWidth="5"
+                BorderColor="#dcbf9d"
+                BackgroundColor="WhiteSmoke"
+                HorizontalOptions="Center"
+                VerticalOptions="End" />
+
+        <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                x:Name="btnStoppen" 
+                Text="Stoppen"
+                Clicked="btnStoppen_Clicked"
+                BorderWidth="5"
+                BorderColor="#dcbf9d"
+                BackgroundColor="WhiteSmoke"
+                HorizontalOptions="End"
+                VerticalOptions="End" />
+        <ScrollView Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="3" BackgroundColor="WhiteSmoke">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".15*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width=".15*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Placeholder="Gewicht in kg" x:Name="txtGewicht" Keyboard="Numeric" Grid.Column="1" Grid.Row="0" VerticalOptions="Start"/>
+                <Entry Placeholder="Tijd in minuten" x:Name="txtTijd" Keyboard="Numeric" Grid.Column="1" Grid.Row="0" VerticalOptions="End" IsReadOnly="True"/>
+                <Image Source="Lopen.png" x:Name="imgKeuze" Grid.Column="1" Grid.Row="1" VerticalOptions="End" HorizontalOptions="Center" HeightRequest="200" WidthRequest="200"/>
+                <Slider Minimum="0" Maximum="2" x:Name="SliderKeuze" Grid.ColumnSpan="3" Grid.Row="2" VerticalOptions="Start" MaximumTrackColor="Red" MinimumTrackColor="IndianRed" ThumbColor="Black" IsEnabled="False" />
+                <Button Text="Lopen" x:Name="btnLopen" Grid.Column="1" Grid.Row="2" VerticalOptions="End" HorizontalOptions="Start" Clicked="btnLopen_Clicked" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
+                <Button Text="Rennen" x:Name="btnRennen" Grid.Column="1" Grid.Row="2" VerticalOptions="End" HorizontalOptions="Center" Clicked="btnRennen_Clicked" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
+                <Button Text="Fietsen" x:Name="btnFietsen" Grid.Column="1" Grid.Row="2" VerticalOptions="End" HorizontalOptions="End" Clicked="btnFietsen_Clicked" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
+                <Frame HasShadow="True" CornerRadius="7" Grid.Column="1" Grid.Row="3" BackgroundColor="WhiteSmoke" BorderColor="#dcbf9d" Padding="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="" x:Name="lblUitkomst" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" FontSize="17.5" TextColor="Black" />
+                        <Label Text="" x:Name="lblAlternatief1" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Text="" x:Name="lblAlternatief2" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center" />
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ScrollView>
+        <Button Text="Bereken" x:Name="btnBereken" Grid.Column="1" Grid.Row="7" VerticalOptions="End" Clicked="btnBereken_Clicked" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke"/>
+        <Button Text="B" x:Name="btnTerug" Grid.Column="0" Grid.Row="7" VerticalOptions="End" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" FontSize="20"/>
+        <Button Text="O" x:Name="btnOpties" Grid.Column="2" Grid.Row="7" VerticalOptions="End" CornerRadius="7" BorderColor="#dcbf9d" BorderWidth="5" BackgroundColor="WhiteSmoke" FontSize="20"/>
+    </Grid>
 </ContentPage>
+
